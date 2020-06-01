@@ -12,7 +12,7 @@
   
   # Network Architecture
   <p align="center">
-  <img src="images/architecture.png" alt="Logo" width="690. 4" height="488. 8">
+  <img src="images/networkArchitecture.png" alt="Logo" width="690. 4" height="488. 8">
   </p>
 
 # Repository contains:-
