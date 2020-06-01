@@ -1,6 +1,6 @@
 <p align="center">
-	<img src="images/springBoot.png" alt="springBoot" width="58.3" height="58.3">
-	<img src="images/eureka.png" alt="eureka" width="271.6" height="58.24">
+    <img src="images/springBoot.png" alt="springBoot" width="58.3" height="58.3">
+    <img src="images/eureka.png" alt="eureka" width="271.6" height="58.24">
   <h2 align="center">Load Balancer Using Java</h3>
   <h3 align="center">
    A kick starter project to create a custom load-balancer in Java with the help of EUREKA NAMING SERVER and RIBBON. 
@@ -9,7 +9,7 @@
   
   # Network Architecture
   <p align="center">
- 	<img src="images/networkArchitecture.png" alt="Logo" width="690.4" height="488.8">
+     <img src="images/networkArchitecture.png" alt="Logo" width="690.4" height="488.8">
   </p>
 
 # Repository contains:-
@@ -40,8 +40,8 @@ All client server communication will be done through this load balancing server.
 
 ``` 
 <properties>
-	<java.version>11</java.version>
-	<spring-cloud.version>Hoxton.SR4</spring-cloud.version>
+    <java.version>11</java.version>
+    <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
 </properties>
 
 <dependencies>
@@ -76,17 +76,17 @@ eureka.client.fetch-registry=false
 @EnableEurekaServer // to enable the communication with Eureka server
 public class NetflixEurekaNamingServerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(NetflixEurekaNamingServerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(NetflixEurekaNamingServerApplication.class, args);
+    }
 
 }
 
 ```
 
-* After running this application we can access the eureka server dashboard in following url
+* After running this application we can access the Eureka server dashboard in the following URL
 
-Link :- http://localhost:8761
+Link:- http://localhost:8761
 
 <h3>Eureka Server Dashboard :- </h3>
 <p align="center">
@@ -121,7 +121,7 @@ Link :- http://localhost:8761
   <dependency>
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-	</dependency>
+    </dependency>
 </dependencies>
 ```
 
@@ -144,16 +144,16 @@ eureka.client.service-url.default-zone=http://localhost:8761/eureka // end point
 @EnableDiscoveryClient
 public class MicroServiceServerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MicroServiceServerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(MicroServiceServerApplication.class, args);
+    }
 
 }
 ```
 
 #### Run Server application instance in two ports
 
-First simply run the application as java application using main method. 
+First, simply run the application as a java application using the main method. 
 To run one more instance in another port we need to edit the <b>Run/Debug Configurations</b> In the IDE. 
 <h3>In IntelliJ :- </h3>
 <p> 
@@ -184,8 +184,8 @@ To run one more instance in another port we need to edit the <b>Run/Debug Config
 
 ## 3) Client application
 
-* This application will perform as consumer of APIs which is written in the main server. 
-* It consumes the APIs from the both main server instance based on availability through load balancer. 
+* This application will perform as a consumer of APIs which is written in the main server. 
+* It consumes the APIs from both main server instances based on availability through the load balancer. 
 * We also use <b>netflix-eureka-client</b> library to communicate with load balancer application. 
 
 ### OpenFeign
@@ -276,7 +276,7 @@ public class MicroServiceClientApplication {
 
 ### ClientController. java
 
-* It is a ordinary rest controller class
+* It is an ordinary rest controller class
 
 ``` 
 @RestController
@@ -315,7 +315,7 @@ public interface ApiProxy {
 
 ### ResponseModel. java
 
-* It isa traditional model class. 
+* It is a traditional model class. 
 
 ``` 
 public class ResponseModel {
@@ -329,7 +329,7 @@ public class ResponseModel {
 }
 ```
 
-* After running client application, instance of this application also appear in the eureka server dashboard. 
+* After running client application, an instance of this application also appear in the eureka server dashboard. 
 
 -Finally Eureka Server Dashboard will be as follows. 
 <p align="center">
@@ -340,18 +340,18 @@ public class ResponseModel {
 
 * call client application API to see the load balancing magic. 
 
-URI :- http://localhost:5000/microservice/client/technologyInfo/java
+URI:- http://localhost:5000/microservice/client/technologyInfo/java
 
-* Response :- 
+* Response:- 
 
 ``` 
 {"tittle":"Technology Stack","platform":"Java","usedFor":"Secured Web Services","serverPort":4000}
 ```
 
-* Do refresh :-
+* Do refresh:-
 
 ``` 
 {"tittle":"Technology Stack","platform":"Java","usedFor":"Secured Web Services","serverPort":4001}
 ```
 
-* From the result we can understand that the api response is receiving from different servers by identifying port change. 
+* From the result, we can understand that the API response is receiving from different servers by identifying port change. 
