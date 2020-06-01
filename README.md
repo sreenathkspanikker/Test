@@ -1,7 +1,7 @@
 <br />
   <p align="center">
   <img src="images/springBoot.png" alt="Logo" width="80" height="80">
-  <img src="images/eureka.png" alt="Logo" width="371. 025" height="79. 56">
+  <img src="images/eureka.png" alt="Logo" width="141" height="62.4">
   <h2 align="center">Build A Load Balancer Using Java</h3>
   <p align="center">
    A kick starter project to create a custom load-balancer in Java with the help of EUREKA NAMING SERVER and RIBBON. 
@@ -12,7 +12,7 @@
   
   # Network Architecture
   <p align="center">
-  <img src="images/networkArchitecture.png" alt="Logo" width="485" height="104">
+ 	<img src="images/architecture.png" alt="Logo" width="690.4" height="488.8">
   </p>
 
 # Repository contains:-
